@@ -1,22 +1,19 @@
-* SPARTAN EMACS
-
+* TODO INIT EMACS - BASED ON SPARTAN EMACS
   Finally, a simple base Emacs configuration framework
-
-  [[spartan-theme.png]]
 
   A word for beginners:
 
-  Spartan Emacs is a framework, not a starter kit. It does not teach Emacs. If you are new, welcome, and please begin by checking out `M-x help-with-tutorial`.
+  This Emacs configuration is a framework, not a starter kit. It does not teach Emacs. If you are new, welcome, and please begin by checking out `M-x help-with-tutorial`.
   `M-x` means meta ('alt') + `x` and then `help-with-tutorial` Return (enter) to begin. One might follow up with `An Introduction to Programming in Emacs Lisp`
   additionally. The manuals may all be found at https://www.gnu.org/software/emacs/manual/
 
-** QUICK INSTALL
+** TODO QUICK INSTALL
 
    #+BEGIN_SRC bash
      git clone https://github.com/grandfoobah/spartan-emacs.git ~/.emacs.d
    #+END_SRC
 
-*** FEATURES
+*** TODO FEATURES
 
     - KISS, clean configuration and a comprehensible layers system
     - No third party packages install by default - prefers built-ins
@@ -31,9 +28,9 @@
 
 *** LAYERS
 
-    - Edit init.el and M-x spartan-reconfigure
+    - Edit init.el and M-x init-reconfigure
 
-**** HOW LAYERS WORK
+**** TODO HOW LAYERS WORK
 
     - Enabled layer packages are installed during init
     - Then layer packages are configured in the after-init-hook
@@ -41,7 +38,7 @@
 
       (all lisp files in spartan.d/ load last, during the emacs-startup-hook)
 
-*** MINIMAL LANGUAGE LAYERS PRECONFIGURED
+*** TODO MINIMAL LANGUAGE LAYERS PRECONFIGURED
 
 NOTE: The idea here is to provde everywhere the get up and going configuration, this means  proper syntax formatting with an interactive repl for rapid development,
 and intelligent auto-completion and find definition, etc. via eglot's minimal language server protocol implementation.
@@ -103,13 +100,3 @@ With compiled languages, one might use <f5> and set the compile command to somet
 *** CONTRIBUTE
 
     - [[https://github.com/grandfoobah/spartan-emacs/issues/1][Language Layers Wanted]]
-
-**** Tips for MacOS users
-
-    #+BEGIN_SRC bash
-    brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep bash
-    echo '/opt/homebrew/bin/bash' | sudo tee -a /etc/shells
-    chsh -s /opt/homebrew/bin/bash
-    #+END_SRC
-
-    Automatically "Linuxify's" your Emacs environent https://github.com/a-schaefers/spartan-emacs/commit/0ba55e7580ca70f9ef172a5464bba8bd575df7b8

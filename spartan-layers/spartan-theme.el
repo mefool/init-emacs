@@ -30,12 +30,7 @@
       initial-major-mode 'emacs-lisp-mode
       load-prefer-newer t)
 
-  (setq initial-scratch-message "
-; _______  _____  _______  ______ _______ _______
-; |______ |_____] |_____| |_____/    |    |_____|
-; ______| |       |     | |    \\_    |    |     |
-
-")
+  (setq initial-scratch-message "")
 
 ;; better scratch https://www.reddit.com/r/emacs/comments/4cmfwp/scratch_buffer_hacks_to_increase_its_utility/
 
