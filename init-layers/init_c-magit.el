@@ -1,8 +1,8 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-(add-to-list 'spartan-package-list 'magit)
+(add-to-list 'package-list 'magit)
 
-(defun spartan-magit-hook ()
+(defun magit-hook ()
   (require 'magit)
   (setq magit-repository-directories '(("~/repos" . 1)))
 
@@ -10,6 +10,6 @@
               (fboundp 'ivy-mode))
     (setq magit-completing-read-function 'magit-ido-completing-read)))
 
-(add-hook 'after-init-hook 'spartan-magit-hook)
+(add-hook 'after-init-hook 'magit-hook)
 
-(provide 'spartan-magit)
+(provide 'init_c-magit)

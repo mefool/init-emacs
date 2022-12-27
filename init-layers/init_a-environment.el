@@ -17,14 +17,14 @@
 
 ;; 'PATH' modifications
 
-(setq spartan-path-insert '(
-                            "~/bin"
-                            "~/.local/bin"
-                            ))
+(setq init-path-insert '(
+                         "~/bin"
+                         "~/.local/bin"
+                         ))
 
-(setq spartan-path-append '(
-                            ;; "~/Put/To/End/Of/PATH"
-                            ))
+(setq init-path-append '(
+                         ;; "~/Put/To/End/Of/PATH"
+                         ))
 
 ;; Help out MacOS users to make dev env more like-linux
 ;; HINT: brew install coreutils findutils gnu-tar gnu-sed gawk gnutls gnu-indent gnu-getopt grep bash
@@ -36,16 +36,16 @@
   (add-to-list 'gnubin-locations "/opt/homebrew/sbin" t)
 
   (dolist (item gnubin-locations)
-    (add-to-list 'spartan-path-insert item)))
+    (add-to-list 'init-path-insert item)))
 
 ;; SET matching exec-path and 'PATH' values with inserts/appends
 
-(dolist (item spartan-path-insert)
+(dolist (item init-path-insert)
   (add-to-list 'exec-path item))
 
-(dolist (item spartan-path-append)
+(dolist (item init-path-append)
   (add-to-list 'exec-path item t))
 
 (setenv "PATH" (string-trim-right (string-join exec-path ":") ":$"))
 
-(provide 'spartan-environment)
+(provide 'init_a-environment)

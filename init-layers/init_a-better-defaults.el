@@ -74,4 +74,4 @@
 ;; better dired
 (add-hook 'dired-load-hook (function (lambda () (load "dired-x"))))
 
-(provide 'spartan-better-defaults)
+(provide 'init_a-better-defaults)

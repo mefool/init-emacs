@@ -1,6 +1,6 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-(setq spartan-package-list '())
+(setq package-list '())
 
 (require 'package)
 
@@ -16,12 +16,12 @@
 
 (package-initialize)
 
-(defun spartan-package-bootstrap ()
+(defun init-package-bootstrap ()
   (unless package-archive-contents
     (package-refresh-contents))
 
-  (dolist (package spartan-package-list)
+  (dolist (package init-package-list)
     (unless (package-installed-p package)
       (package-install package))))
 
-(provide 'spartan-elpa-melpa)
+(provide 'init_b-elpa-melpa)

@@ -17,4 +17,4 @@
 ;; do not steal focus while doing async compilations
 (setq warning-suppress-types '((comp)))
 
-(provide 'spartan-performance)
+(provide 'init_a-performance)

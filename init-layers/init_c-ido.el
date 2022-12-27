@@ -1,9 +1,9 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-(add-to-list 'spartan-package-list 'amx)
-(add-to-list 'spartan-package-list 'ido-completing-read+)
+(add-to-list 'package-list 'amx)
+(add-to-list 'package-list 'ido-completing-read+)
 
-(defun spartan-ido-hook ()
+(defun ido-hook ()
   (require 'ido)
   (require 'ido-completing-read+)
   (require 'amx)
@@ -25,6 +25,6 @@
           amx-show-key-bindings nil)
     (amx-mode 1)))
 
-(add-hook 'after-init-hook 'spartan-ido-hook)
+(add-hook 'after-init-hook 'ido-hook)
 
-(provide 'spartan-ido)
+(provide 'init_c-ido)

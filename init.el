@@ -1,80 +1,86 @@
 ;;; -*- lexical-binding: t; no-byte-compile: t; -*-
 
-;; configuration -- uncomment desired layers => C-x C-s => M-x spartan-reconfigure
+;; configuration -- uncomment desired layers => C-x C-s => M-x init-reconfigure
 
-(setq spartan-layers '(spartan-startup
-                       spartan-performance
-                       spartan-better-defaults
-                       spartan-binds-global
-                       spartan-environment
-                       spartan-theme
+(setq init-layers '(
+    init_a-startup
+    init_a-performance
+    init_a-better-defaults
+    spartan-binds-global
+    init_a-environment
+    init_a-theme
 
-                       ;; spartan-elpa-melpa ; required by layers below
-                       ;; spartan-ido
-                       ;; spartan-flymake
-                       ;; spartan-projectile
-                       ;; spartan-evil
-                       ;; spartan-kill-ring
-                       ;; spartan-crux
-                       ;; spartan-webpaste
-                       ;; spartan-shell
-                       ;; spartan-emacs-nw
-                       ;; spartan-vterm
-                       ;; spartan-magit
-                       ;; spartan-eglot
-                       ;; spartan-lisp
-                       ;; spartan-c
-                       ;; spartan-python
-                       ;; spartan-terraform
-                       ;; spartan-nix
-                       ;; spartan-nginx
-                       ;; spartan-systemd
-                       ;; spartan-json
-                       ;; spartan-yaml
-                       ;; spartan-xml
-                       ;; spartan-javascript
-                       ;; spartan-ruby
-                       ;; spartan-rust
-                       ;; spartan-go
-                       ;; spartan-solidity
-                       ))
+    init_b-elpa-melpa ; required by layers below
+    init_c-ido
+    init_c-magit
 
-;; spartan-layers
+    init_dev-rust
 
-(add-to-list 'load-path (concat user-emacs-directory "spartan-layers"))
+    ;; DONE spartan-ido
+    ;; spartan-flymake
+    ;; spartan-projectile
+    ;; spartan-evil
+    ;; spartan-kill-ring
+    ;; spartan-crux
+    ;; spartan-webpaste
+    ;; spartan-shell
+    ;; DONE spartan-emacs-nw
+    ;; spartan-vterm
+    ;; DONE ? spartan-magit
+    ;; spartan-eglot
+    ;; spartan-lisp
+    ;; spartan-c
+    ;; spartan-python
+    ;; spartan-terraform
+    ;; spartan-nix
+    ;; spartan-nginx
+    ;; spartan-systemd
+    ;; spartan-json
+    ;; spartan-yaml
+    ;; spartan-xml
+    ;; spartan-javascript
+    ;; spartan-ruby
+    ;; DONE spartan-rust
+    ;; spartan-go
+    ;; spartan-solidity
+    ))
 
-(dolist (layer spartan-layers)
-  (require layer))
+;; init-layers
+
+(add-to-list 'load-path (concat user-emacs-directory "init-layers"))
+
+(dolist (layer init-layers)
+    (require layer))
 
 ;; install third party packages
 
-(with-eval-after-load 'spartan-elpa-melpa
-  (spartan-package-bootstrap))
+(with-eval-after-load 'init-elpa-melpa
+    (init-package-bootstrap))
 
 ;; M-x customize
 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
 (when (file-exists-p custom-file)
-  (load-file custom-file))
+    (load-file custom-file))
 
-;; spartan.d/
+;; init.d/
 
-(setq spartan-lisp-d (concat user-emacs-directory "spartan.d"))
+(setq init-lisp-d (concat user-emacs-directory "init.d"))
 
-(defun spartan-user-local-hook ()
-  (when (file-directory-p spartan-lisp-d)
-  (dolist (file (directory-files spartan-lisp-d nil "^.*\.el$"))
-    (load-file (concat spartan-lisp-d "/" file)))))
+(defun init-user-local-hook ()
+    (when (file-directory-p init-lisp-d)
+    (dolist (file (directory-files init-lisp-d nil "^.*\.el$"))
+        (load-file (concat init-lisp-d "/" file)))))
 
-(add-hook 'emacs-startup-hook 'spartan-user-local-hook)
+(add-hook 'emacs-startup-hook 'init-user-local-hook)
 
-;; M-x spartan-reconfigure
+;; M-x init-reconfigure
 
-(defun spartan-reconfigure ()
-  (interactive)
-  (load-file user-init-file)
-  (run-hooks 'after-init-hook
-             'emacs-startup-hook))
+(defun init-reconfigure ()
+    (interactive)
+    (load-file user-init-file)
+    (run-hooks 'after-init-hook
+               'emacs-startup-hook))
 
 ;;; init.el ends here

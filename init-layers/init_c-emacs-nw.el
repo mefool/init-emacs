@@ -2,7 +2,7 @@
 
 ;; for terminal Emacs only (emacs -nw)
 
-(defun spartan-emacs-nw-hook ()
+(defun init-emacs-nw-hook ()
   (global-set-key (kbd "C-x ;") 'comment-line) ; "C-x C-;" is interpreted this way in some terminals
 
   (xterm-mouse-mode 1) ; mouse support
@@ -12,7 +12,7 @@
 
 (or window-system
     (progn
-      (add-to-list 'spartan-package-list 'clipetty)
-      (add-hook 'after-init-hook 'spartan-emacs-nw-hook)))
+      (add-to-list 'init-package-list 'clipetty)
+      (add-hook 'after-init-hook 'init-emacs-nw-hook)))
 
-(provide 'spartan-emacs-nw)
+(provide 'init_c-emacs-nw)

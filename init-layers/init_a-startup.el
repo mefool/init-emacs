@@ -10,4 +10,4 @@
                                (or (server-running-p)
                                    (server-start))))
 
-(provide 'spartan-startup)
+(provide 'init_a-startup)
