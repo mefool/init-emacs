@@ -1,16 +1,15 @@
 * TODO INIT EMACS - BASED ON SPARTAN EMACS
-  Finally, a simple base Emacs configuration framework
+  Simpler base Emacs configuration framework
 
   A word for beginners:
 
-  This Emacs configuration is a framework, not a starter kit. It does not teach Emacs. If you are new, welcome, and please begin by checking out `M-x help-with-tutorial`.
-  `M-x` means meta ('alt') + `x` and then `help-with-tutorial` Return (enter) to begin. One might follow up with `An Introduction to Programming in Emacs Lisp`
-  additionally. The manuals may all be found at https://www.gnu.org/software/emacs/manual/
+  This Emacs configuration is a framework, not a starter kit. If you are new, welcome, and please begin by checking out `M-x help-with-tutorial`.
+  The manuals may all be found at https://www.gnu.org/software/emacs/manual/
 
 ** TODO QUICK INSTALL
 
    #+BEGIN_SRC bash
-     git clone https://github.com/grandfoobah/spartan-emacs.git ~/.emacs.d
+     git clone https://github.com/mefool/init-emacs
    #+END_SRC
 
 *** TODO FEATURES
@@ -18,14 +17,8 @@
     - KISS, clean configuration and a comprehensible layers system
     - No third party packages install by default - prefers built-ins
     - Uses lightweight, mostly-vanilla configured layer packages
-    - Popular langs come with optional layers that are preconfigured with the best modes, a REPL, and intelligent LSP auto-completion, find def, etc. via Eglot
-    - Project Awareness is available with Projectile, VC with Magit
-    - Support for Evil mode with spartan-evil layer
-    - Load time with all layers enabled is less than 1 second on a 10 year old laptop - without resorting to use-package, deferrals, pdumper or hacks.
     - Tested on Linux, but should work also work fine on any gnu/bsd/macos base
-    - Tuned for [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-performance.el][ultimate performance]] using the latest *pgtk* *gccemacs* with native *json* parsing with *eglot* language server protocol  (not required, just recommended)
-    - [[https://www.google.com/search?q=why+not+syntax+highlighting+is+better][No syntax highlighting]]
-
+    
 *** LAYERS
 
     - Edit init.el and M-x init-reconfigure
@@ -96,7 +89,3 @@ With compiled languages, one might use <f5> and set the compile command to somet
     - Also see [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-eglot.el][spartan-eglot.el]] for language-server-protocol binds
 
     - And for language-specific files, see relevant language file e.g. [[https://github.com/grandfoobah/spartan-emacs/blob/master/spartan-layers/spartan-python.el][spartan-python.el]]
-
-*** CONTRIBUTE
-
-    - [[https://github.com/grandfoobah/spartan-emacs/issues/1][Language Layers Wanted]]
